@@ -1,0 +1,1997 @@
+@font-face {
+    font-family: 'EarlyFontDiary';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TTTogether';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/TTTogetherA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color:#494846; display: block; font-family: 'NanumSquareRound';}
+li{list-style: none;}
+div{box-sizing: border-box;}
+header,section,footer{width: 100%; float: left;}
+img{width: 100%;}
+html,body{
+    font-family: 'NanumSquareRound';
+    color:#494846;
+}
+
+
+/* 스크롤바 */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #ccc143;
+    border-radius: 30px;
+}
+body::-webkit-scrollbar-track {
+    background-color: rgb(224, 224, 224);
+    border-radius: 30px;
+}
+
+.wrap{
+    position: relative;
+}
+/* header */
+.m_header{
+    display: none;
+}
+/* 로고 */
+.pc_box .logo{
+    height: 100px;
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'TTTogether';
+    color: #fff;
+    text-shadow: 6px 6px 1px #a8dce4;
+    cursor: pointer;
+    line-height: 100px;
+    transition: all 1s;
+    z-index: 100;
+}
+.logo .textcontainer {
+    text-align: center;
+}
+.logo .particletext { 
+    text-align: center;
+    font-size: 48px;
+    position: relative;
+}
+.logo .particletext.confetti > .particle {
+    opacity: 0;
+    position: absolute;
+    animation: confetti 3s ease-in infinite;
+}
+body .particletext.confetti > .particle.c1 {
+    background-color: rgba(76, 175, 80, 0.5);
+}
+body .particletext.confetti > .particle.c2 {
+    background-color: rgba(156, 39, 176, 0.5);
+}
+@keyframes confetti {
+    0% {
+      opacity: 0;
+      transform: translateY(0%) rotate(0deg);
+    }
+    10% {
+      opacity: 1;
+    }
+    35% {
+      transform: translateY(-800%) rotate(270deg);
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(2000%) rotate(1440deg);
+    }
+}
+
+/* 내비게이션 */
+.pc_box nav{
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+.pc_box nav ul li a{
+    width: 120px;
+    height: 30px;
+    padding: 5px 10px;
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+    transition: all 0.5s;
+}
+.pc_box nav ul li a img{
+    width: 10px;
+    height: 10px;
+    padding: 10px 10px 10px 0;
+    float: left;
+}
+
+/* visual */
+section.visual{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+section.visual .center_box{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* welcom intro */
+.title-word {
+    animation: color-animation 4s linear infinite;
+    font-family: 'TTTogether';
+}
+.title-word-1 {
+    --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+}
+.title-word-2 {
+    --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #17494D;
+}
+.title-word-3 {
+    --color-1: #ACCFCB;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+}
+.title-word-4 {
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #E4A9A8;
+}
+@keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+}  
+section.visual .container {
+    display: grid;
+    place-items: center;  
+    text-align: center;
+} 
+section.visual .title {
+    font-weight: 800;
+    font-size: 4.5vw;
+    text-transform: uppercase;
+}
+
+/* typing intro */
+.css-typing{
+    width: 200px;
+    margin-top: 5vw;
+    font-family: 'EarlyFontDiary';
+}
+.css-typing p {
+    border-right: .15em solid orange;
+    font-size: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.css-typing p:nth-child(1) {
+    width: 150px;
+    animation: type 2s steps(40, end);
+    animation-fill-mode: forwards;
+}  
+.css-typing p:nth-child(2) {
+    width: 200px;
+    opacity: 0;
+    animation: type2 2s steps(40, end);
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+.css-typing p:nth-child(3) {
+    width: 190px;
+    opacity: 0;
+    animation: type3 2s steps(40, end), blink .5s step-end infinite alternate;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      border: none;
+    }
+}
+
+@keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+}
+@keyframes type3 {
+    0% {
+        width: 0;
+      }
+      1% {
+        opacity: 1;
+      }
+      99.9% {
+        border-right: .15em solid orange;
+      }
+      100% {
+        opacity: 1;
+      }
+}
+@keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+}
+
+/* 프로필 */
+section.profile{
+    margin-top: 120px;
+    margin-bottom: 80px;
+    height: 500px;
+}
+section.profile .center_box{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+section.profile .center_box > h1{
+    font-size: 40px;
+    font-family: 'EarlyFontDiary';
+}
+section.profile .detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+    height: 100%;
+    width: 100%;
+}
+section.profile .detail .me{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section.profile .detail .me img{
+    width: 80%;
+}
+section.profile .detail .about{
+    display: flex;
+    justify-content: space-between;
+}
+section.profile .detail .about p{
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+section.profile .detail .about div > div{
+    flex: 1;
+}
+section.profile .detail .about .box1{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+    margin: 20px;
+    flex: 1;
+}
+section.profile .detail .about .about_me p{
+    line-height: 24px;
+    font-size:20px;
+}
+section.profile .detail .about .text{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+section.profile .detail .about .box2{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+    margin: 20px;
+    flex: 1;
+}
+section.profile .detail .about .box2 div div{
+    margin-top: 10px;
+}
+section.profile .detail .about .box2 .education div h3{
+    line-height: 30px;
+}
+section.profile .detail .about .box2 .license{
+    margin-top: 30px;
+}
+
+
+section.profile .detail .skill ul{
+    display: grid;
+    grid-template-columns: 80px 80px 80px;
+    grid-template-rows: 110px 110px;
+    gap: 30px;
+    margin-top: 30px;
+}
+section.profile .detail .skill ul li{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+section.profile .detail .skill ul li p{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+section.profile .detail .skill ul li .text{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 3px;
+    box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    background: #413951;
+    background: linear-gradient(145deg, #413951 0%, #201c29 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#413951', endColorstr='#201c29',GradientType=0 );
+    color: #fff;
+    font-family: 'montserrat', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .headline {
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  
+  
+  .circles-small {
+    margin: 0 auto;
+    width: 400px;
+    height: 80px;
+    text-align: center;
+  }
+  
+  .circle-small {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 20px;
+  }
+  
+  .circle-small svg {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .circle-small .bg {
+    fill: none;
+    stroke-width: 6px;
+    stroke: #343035;
+  }
+  
+  .circle-small .progress {
+    fill: none;
+    stroke-width: 6px;
+    stroke: #9a0fe0;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+  .html .circle-small .progress{
+    stroke: #5dbecf;
+    stroke-dasharray: 332;
+  }
+  .css .circle-small .progress{
+    stroke: #8fc07c;
+    stroke-dasharray: 332;
+  }
+  .js .circle-small .progress{
+    stroke: #7f6ba8;
+    stroke-dasharray: 290;
+  }
+  .jq .circle-small .progress{
+    stroke: #d14653;
+    stroke-dasharray: 308;
+  }
+  .ps .circle-small .progress{
+    stroke: #0072bc;
+    stroke-dasharray: 275;
+  }
+  .ai .circle-small .progress{
+    stroke: #ee9717;
+    stroke-dasharray: 253;
+  }
+  .circle-small .progress.one {
+    stroke-dashoffset: 80;
+            animation: one 2.5s ease-in-out, appear 1s;
+  }
+  
+  .circle-small .progress.two {
+    stroke-dashoffset: 140;
+            animation: two 3.5s ease-in-out, appear 2s;
+  }
+  
+  .circle-small .text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  @keyframes big {
+    from {
+      stroke-dashoffset: 326.56;
+    }
+    to {
+      stroke-dashoffset: 60;
+    }
+  }
+  
+  @keyframes one {
+    from {
+      stroke-dashoffset: 232.36;
+    }
+    to {
+      stroke-dashoffset: 80;
+    }
+  }
+  
+  @keyframes two {
+    from {
+      stroke-dashoffset: 232.36;
+    }
+    to {
+      stroke-dashoffset: 140;
+    }
+  }
+  
+  @keyframes appear {
+      0%, 50% {
+          opacity: 0;
+      }
+      100% {
+          opacity: 1;
+      }
+  }
+  
+/* 웹 */
+section.web{
+    margin: 80px 0;
+}
+section.web .center_box{
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+section.web .center_box>h1{
+    font-size: 40px;
+    font-family: 'EarlyFontDiary';
+}
+section.web .w_btn ul{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'EarlyFontDiary';
+}
+section.web .w_btn ul li{
+    padding: 0 20px;
+}
+section.web .w_btn ul li a{
+    font-family: 'EarlyFontDiary';
+    transition: all 1s;
+}
+section.web .w_btn ul li.active a{
+    background-image: linear-gradient(transparent 70%, #F8CD07 30%);
+}
+section.web .web_box{
+    margin-top: 80px;
+    width: 1400px;
+    position: relative;
+    height: 1900px;
+    overflow: hidden;
+    transition: all 1s;
+}
+section.web .web_box > ul{
+    width: 4200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s;
+}
+section.web .web_box > ul > li{
+    width: 1400px;
+    float: left;
+}
+section.web .web_box > ul > li > ul > li{
+    width: 100%;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+section.web .web_box > ul > li > ul > li:last-child{
+    margin-bottom: 0;
+}
+section.web .web_box .mock{
+    width: 700px;
+    height: 400px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+section.web .web_box .banch-marking .emart .mock{
+    background-image: url(../img/emart.jpg);
+}
+section.web .web_box .banch-marking .yellow_balloon .mock{
+    background-image: url(../img/yellow.jpg);
+}
+section.web .web_box .banch-marking .goalstudio .mock{
+    background-image: url(../img/goal.jpg);
+}
+section.web .web_box .banch-marking .cheogajip .mock{
+    background-image: url(../img/cheogajip.jpg);
+}
+section.web .web_box .practice .listen .mock{
+    background-image: url(../img/listen.jpg);
+}
+section.web .web_box .practice .waterpik .mock{
+    background-image: url(../img/waterpik.jpg);
+}
+section.web .web_box .practice .tire-tech .mock{
+    background-image: url(../img/tiretech.jpg);
+}
+section.web .web_box .practice .reactive .mock{
+    background-image: url(../img/reactive.jpg);
+}
+section.web .web_box .portfolio .portfolio1 .mock{
+    background-image: url(../img/portfolio1.jpg);
+}
+section.web .web_box .portfolio .portfolio2 .mock{
+    background-image: url(../img/portfolio2.jpg);
+}
+section.web .web_box .detail{
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section.web .web_box .detail .box.m{
+    display: none;
+}
+section.web .web_box .detail .box{
+    margin-top: 20px;
+}
+section.web .web_box .detail .box p{
+    line-height: 25px;
+}
+section.web .web_box .detail span{
+    font-weight: bold;
+    width: 130px;
+    float: left;
+}
+section.web .web_box .detail span.last{
+    height: 30px;
+}
+section.web .web_box .btn{
+    margin-top: 50px;
+}
+section.web .web_box .btn button{
+    border: none;
+    background-color: transparent;
+    margin-right: 20px;
+}
+section.web .web_box .btn button a{
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border: 1px solid #E4A9A8;
+    text-align: center;
+    font-weight: bold;
+    float: left;
+    transition: all 0.3s;
+}
+section.web .web_box .btn button a:hover{
+    border: 1px solid #7a5b5a;
+    background-color: #E4A9A8;
+    color: #fff;
+}
+section.web .web_box .btn button.m a{
+    border: 1px solid #63ad6d;
+}
+section.web .web_box .btn button.m a:hover{
+    border: 1px solid #38633d;
+    background-color: #63ad6d;
+    color: #fff;
+}
+section.web .web_box > ul > li > ul > li:nth-child(even) .mock{
+    order: 2;
+}
+section.web .web_box > ul > li > ul > li:nth-child(even) .detail{
+    order: 1;
+}
+section.web .web_box .banch-marking .yellow_balloon .mock .icon1{
+    width: 50px;
+    position: absolute;
+    top: 70px;
+    left: 120px;
+    animation: cloud2 2s infinite linear;
+}
+.web_box .banch-marking .yellow_balloon .mock .icon2{
+    width: 70px;
+    position: absolute;
+    top: 120px;
+    left: 280px;
+    animation: cloud2 2s infinite linear;
+    animation-delay: 1s;
+}
+.web_box .banch-marking .yellow_balloon .mock .icon3{
+    width: 60px;
+    position: absolute;
+    top: 200px;
+    left: 80px;
+    animation: balloon 2s infinite linear;
+}
+@keyframes balloon{
+    50% { transform: translateY(-15px); }
+}
+@keyframes cloud2{
+    0% {
+        transform: translatex(0);
+    }
+    50% {
+        transform: translatex(-20px);
+    }
+}
+
+
+section.web .web_box .banch-marking .goalstudio .mock img.icon1{
+    width: 70px;
+    position: absolute;
+    bottom: 60px;
+    left: 10px;
+    animation: bounce 0.5s infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+}
+section.web .web_box .banch-marking .goalstudio .mock img.icon2{
+    width: 50px;
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+}
+@keyframes bounce {
+    from { transform: translate3d(0, 0, 0);}
+    to   { transform: translate3d(0, 50px, 0);}
+}
+section.web .web_box .banch-marking .cheogajip .mock img{
+    width: 120px;
+    position: absolute;
+    animation: chicken 1s infinite;
+}
+section.web .web_box .banch-marking .cheogajip .mock img.icon1{
+    top: 100px;
+    left: 130px;
+    transform: rotate(-30deg);
+}
+section.web .web_box .banch-marking .cheogajip .mock img.icon2{
+    top: 30px;
+    right: 130px;
+    transform: rotate(30deg);
+    animation-delay: 0.75s;
+}
+@keyframes chicken{
+    50%{padding-top: 50px;}
+}
+
+
+.portfolio1 .mock #star span{
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1)  ;
+    animation:  animate2 3s linear infinite;
+    opacity: 0;
+}
+@keyframes animate2{
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{opacity: 0;}
+}
+.mock #star span:nth-child(1){
+    top: 75px;
+    right: 5%;
+    left:initial;
+    animation-delay:1.4s ;
+    animation-duration: 1.25s;
+}
+.mock #star span:nth-child(2){
+    top: 150px;
+    right: 10%;
+    left:initial;
+    animation-delay:2.75s ;
+    animation-duration: 2.25s;
+}
+.mock #star span:nth-child(3){
+    top: 60px;
+    right: 15%;
+    left:initial;
+    animation-delay:1s ;
+    animation-duration: 1.75s;
+}
+.mock #star span:nth-child(4){
+    top: 10px;
+    right: 12%;
+    left:initial;
+}
+.mock #star span:nth-child(5){
+    top: 210px;
+    right: 90%;
+    left:initial;
+    animation-delay:0.7s ;
+    animation-duration: 1.5s;
+}
+.mock #star span:nth-child(6){
+    top: 30px;
+    right: 82%;
+    left:initial;
+    animation-delay:1s;
+    animation-duration: 1.75s;
+}
+.mock #star span:nth-child(7){
+    top: 150px;
+    right: 85%;
+    left:initial;
+}
+.mock #star span:nth-child(8){
+    top: 100px;
+    right: 90%;
+    left:initial;
+    animation-delay:1.2s;
+    animation-duration: 2.25s;
+}
+.mock #star span:nth-child(9){
+    top: 60px;
+    right: 95%;
+    left:initial;
+    animation-delay:2s;
+    animation-duration: 2.25s;
+}
+
+section.web .portfolio2 .btn{
+    width: 250px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border: 1px solid #bebce3;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* 그래픽 디자인 */
+section.graphic{
+    margin: 80px 0;
+    position: relative;
+}
+section.graphic .center_box{
+    width: 1400px;
+    margin: 0 auto;
+}
+section.graphic .center_box > h1{
+    font-size: 40px;
+    font-family: 'EarlyFontDiary';
+    text-align: center;
+}
+section.graphic .center_box > ul{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 400px 400px 400px;
+    gap: 50px;
+    height: 850px;
+    overflow: hidden;
+    transition: all 1s;
+}
+section.graphic .center_box > ul li{
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid #ddd;
+}
+section.graphic ul li .view{
+    width: 100%;
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section.graphic ul li.g1 .view{
+    background-image: url(../img/g1.jpg);
+    background-size: 150%;
+}
+section.graphic ul li.g2 .view{
+    background-image: url(../img/g2.jpg);
+    background-size: 120%;
+}
+section.graphic ul li.g3 .view{
+    background-image: url(../img/g3.jpg);
+    background-position: top;
+}
+section.graphic ul li.g4 .view{
+    background-image: url(../img/g4.png);
+    background-position: top;
+}
+section.graphic ul li.g5 .view{
+    background-image: url(../img/g5.jpg);
+}
+section.graphic ul li.g6 .view{
+    background-image: url(../img/g6.jpg);
+}
+section.graphic ul li.g7 .view{
+    background-image: url(../img/g7.jpg);
+    background-size: 70%;
+}
+section.graphic ul li.g8 .view{
+    background-image: url(../img/g8.jpg);
+}
+
+
+section.graphic ul li .detail{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 20px;
+}
+section.graphic ul li .detail h3{
+    font-size: 20px;
+    font-family: 'NanumSquareRound';
+}
+section.graphic ul li .detail p{
+    font-size: 16px;
+    margin-top: 10px;
+    font-family: 'NanumSquareRound';
+}
+section.graphic ul li .detail button{
+    border: none;
+    background-color: transparent;
+    margin-top: 20px;
+}
+section.graphic ul li .detail button a{
+    width: 150px;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    border: 1px solid #E4A9A8;
+    text-align: center;
+    font-weight: bold;
+    float: left;
+    transition: all 0.3s;
+    border-radius: 10px;
+}
+section.graphic ul li .detail button a:hover{
+    border: 1px solid #7a5b5a;
+    background-color: #E4A9A8;
+    color: #fff;
+}
+
+section.graphic .more_btn{
+    width: 100%;
+    height: 50px;
+    margin-top: 60px;
+    position: relative;
+}
+section.graphic .more_btn button{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+section.graphic .more_btn button a{
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    background-color: #DBAD4A;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    float: left;
+    transition: all 0.3s;
+    border-radius: 50px;
+}
+section.graphic .more_btn button.hide{
+    display: none;
+}
+
+/* 이메일 */
+section.contact{
+    margin: 80px 0;
+    background-color: #e7df8a;
+    padding-top: 50px;
+    height: 700px;
+}
+section.contact .center_box{
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+section.contact .center_box > h1{
+    font-size: 40px;
+    font-family: 'EarlyFontDiary';
+    text-align: center;
+    margin: 0;
+}
+section.contact .mail_box{
+    display: flex;
+    justify-content: space-between;
+    height: 550px;
+    margin: 30px 0 50px;
+}
+section.contact .message1{
+    display: block;
+}
+section.contact .message2{
+    display: none;
+}
+section.contact .message3{
+    display: none;
+}
+
+.email fieldset{
+    margin: 10px 0;
+    font-size: 14px;
+    border: none;
+    font-family: 'NanumSquareRound';
+}
+.email label{
+    width: 90px;
+    color: #111;
+    font-size: 20px;
+    opacity: 1;
+    float: left;
+    text-align: right;
+    margin-right: 10px;
+    font-family: 'NanumSquareRound';
+}
+.email fieldset input{
+    width: 250px;
+    height: 40px;
+    font-family: 'NanumSquareRound';
+}
+.pure-form .pure-group input:last-child,
+.pure-form .pure-group textarea:last-child{
+    border-radius: 5px;
+    border: none;
+}
+.email button{
+    background-color: #39b2c7;
+    color: #fff;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    border: none;
+    font-family: 'NanumSquareRound';
+}
+.thankyou_message h2{
+    text-align: center;
+    font-family: 'NanumSquareRound';
+}
+
+/* 메일 애니메이션 */
+.email_ani{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.email_ani > p{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 20px;
+    font-family: 'NanumSquareRound';
+    white-space: nowrap;
+}
+.letter-image {
+	width: 200px;
+	height: 200px;
+	transform: translate(-50%, -50%);
+    margin-left: 200px;
+    margin-top: 100px;
+}
+
+.animated-mail {
+	position: absolute;
+	height: 150px;
+	width: 200px;
+	transition: .4s;
+}	
+.animated-mail .body {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 200px;
+    border-color: transparent transparent #e4e4e4 transparent;
+    z-index: 2;
+}
+	
+.animated-mail .top-fold {
+    position: absolute;
+    top: 50px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 100px 0 100px;
+    transform-origin: 50% 0%;
+    transition: transform .4s .4s, z-index .2s .4s;
+    border-color: #cccbcb transparent transparent transparent;
+    z-index: 2;
+}
+	
+.animated-mail .back-fold {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #cccbcb;
+    z-index: 0;
+}
+	
+.animated-mail .left-fold {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 100px;
+    border-color: transparent transparent transparent #dbdbdb;
+    z-index: 2;
+}
+	
+
+.animated-mail .letter {
+    left: 10px;
+    bottom: 0px;
+    position: absolute;
+    width: 180px;
+    height: 60px;
+    background: white;
+    z-index: 1;
+    overflow: hidden;
+    transition: .4s .2s;
+    border: 5px solid rgba(221, 221, 221, 0.541);
+    padding: 20px 10px 0;
+}
+.animated-mail .letter p{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px 0;
+    font-family: 'NanumSquareRound';
+}
+.shadow {
+	position: absolute;
+	top: 200px;
+	left: 50%;
+	width: 400px;
+	height: 30px;
+	transition: .4s;
+	transform: translateX(-50%);
+	background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+}
+.contact .center_box:hover .animated-mail {
+    transform: translateY(50px);
+}	
+.contact .center_box:hover .animated-mail .top-fold {
+    transition: transform .4s, z-index .2s;
+    transform: rotateX(180deg);
+    z-index: 0;
+}	
+.contact .center_box:hover .animated-mail .letter {
+    height: 180px;
+}	
+.contact .center_box:hover .shadow {
+   width: 250px;
+}
+.contact .center_box > p{
+    text-align: center;
+    font-family: 'NanumSquareRound';
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    bottom: 50px ;
+    right: 80px;
+}
+.contact .f_text{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'KOTRAHOPE';
+    color: #dad66b;
+    text-shadow: 3px 3px 3px #111;
+    font-size: 50px;
+    animation: hithere 4s ease infinite;
+    display: none;
+}
+@keyframes hithere {
+    30% { transform: translate(-50%, -50%); }
+    40%, 60% { transform: rotate(-5deg) translate(-50%, -50%); }
+    50% { transform: rotate(5deg)  translate(-50%, -50%); }
+    70% { transform: rotate(0deg)  translate(-50%, -50%); }
+    100% { transform: scale(1) translate(-50%, -50%); }
+}
+
+
+footer{
+    background-color: #fff;
+}
+footer p{
+    text-align: center;
+    font-family: 'NanumSquareRound';
+    font-size: 24px;
+    margin: 30px 0;
+    color: #39b2c7;
+}
+footer p span{
+    margin-top: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+
+.popup{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 120;
+    background-color: rgba(51, 51, 51, 0.98);
+}
+.popup ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup ul li{
+    width: 50%;
+}
+.popup ul .p2{
+    width: 33%;
+}
+.popup ul .p3{
+    width: 12%;
+}
+.popup ul .p4{
+    width: 22%;
+}
+.popup ul .p5{
+    width: 70%;
+}
+.popup ul .p6{
+    width: 60%;
+}
+.popup ul .p7{
+    width: 40%;
+}
+.popup ul .p8{
+    width: 26%;
+}
+
+
+@media screen and (max-width:480px){
+    .pc_box{
+        display: none;
+    }
+    .m_header .menu_btn{
+        display: none;
+    }
+    .m_header .menu_nav{
+        display: none;
+    }
+    .m_header{
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: top 0.2s ease-in-out;
+    }
+    .nav-up {
+        top: -40px;
+    }
+    .m_header.active{
+        box-shadow: 1px 1px 3px #343035;
+        background-color: #efe8a4;
+    }
+    .m_header .logo{
+        width: 120px;
+        font-family: 'TTTogether';
+        line-height: 60px;
+        color: #fff;
+        text-shadow: 3px 3px 1px #a8dce4;
+    }
+    .logo .particletext { 
+        font-size: 24px;
+    }
+    .m_header > nav{
+        margin-right: 5px;
+    }
+    .m_header nav ul li{
+        float: left;
+        margin: 3px;
+    }
+    .m_header nav ul li a{
+        padding: 5px;
+        transition: all 0.5s;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .m_header .menu_btn{
+        display: none;
+    }
+    .m_header .menu_nav{
+        display: none;
+    }
+    /* 비주얼 */
+    section.visual .title {
+        font-weight: 800;
+        font-size: 9vw;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    /* 프로필 */
+    section.profile{
+        margin: 60px 0 30px;
+        height: 1240px;
+    }
+    section.profile .center_box{
+        width: 98%;
+    }
+    section.profile .center_box > h1{
+        font-size: 24px;
+    }
+    section.profile .detail{
+        flex-flow: column nowrap;
+    }
+    section.profile .detail >div{
+        flex: 1;
+    }
+    section.profile .detail h2{
+        font-size: 20px;
+    }
+    section.profile .detail h3{
+        font-size: 18px;
+    }
+    section.profile .detail .me{
+        width: 150px;
+        height: 200px;
+    }
+    section.profile .detail .me img{
+        width: 100%;
+    }
+    section.profile .detail .about{
+        width: 270px;
+        display: block;
+    }
+    section.profile .detail .about p{
+        font-size: 16px;
+    }
+    section.profile .detail .about span{
+        font-size: 13px;
+    }
+    section.profile .detail .about .about_me{
+        margin-top: 30px;
+    }
+    section.profile .detail .about .text{
+        display: none;
+    }
+    section.profile .detail .about .box1{
+        margin: 0px;
+    }
+    section.profile .detail .about .box2{
+        margin: 0;
+    }
+    section.profile .education{
+        margin-top: 30px;
+    }
+    section.profile .detail .about .box2 .education div h3{
+        line-height: 20px;
+    }
+    section.profile .license{
+        margin-top: 30px;
+    }
+
+    section.profile .detail .skill{
+        margin-top: 30px;
+    }
+    section.profile .detail .skill ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 110px 110px 110px;
+        gap: 30px;
+        margin-top: 10px;
+    }
+
+    /* 웹 */
+    section.web{
+        margin: 30px 0;
+    }
+    section.web .center_box{
+        width: 98%;
+    }
+    section.web .center_box > h1{
+        font-size: 24px;
+    }
+    section.web .w_btn ul{
+        margin-top: 30px;
+        font-size: 16px;
+        white-space:nowrap;
+    }
+    section.web .w_btn ul li{
+        padding: 0 8px;
+    }
+    section.web .web_box > ul > li > ul > li:nth-child(even) .mock{
+        order: 1;
+    }
+    section.web .web_box > ul > li > ul > li:nth-child(even) .detail{
+        order: 2;
+    }
+    section.web .web_box{
+        margin-top: 60px;
+        width: 400px;
+        height: 2950px;
+    }
+    section.web .web_box > ul{
+        width: 1200px;
+    }
+    section.web .web_box > ul > li{
+        width: 400px;
+    }
+    section.web .web_box > ul > li > ul > li{
+        flex-flow: column nowrap;
+        height: 700px;
+        margin-bottom: 50px;
+    }
+    section.web .web_box > ul > li:nth-child(2) > ul > li{
+        height: 450px;
+    }
+    section.web .web_box .mock{
+        width: 100%;
+        height: 300px;
+    }
+    section.web .web_box .banch-marking .goalstudio .mock{
+        background-image: url(../img/goal-1.jpg);
+    }
+    section.web .web_box .banch-marking .cheogajip .mock{
+        background-size: 160%;
+    }
+    section.web .web_box .detail{
+        width: 100%;
+        display: block;
+        padding: 10px;
+        margin-top: 10px;
+    }
+    section.web .web_box .detail .box.pc{
+        display: none;
+    }
+    section.web .web_box .detail .box.m{
+        display: block;
+    }
+    section.web .web_box .detail span{
+        font-size: 18px;
+    }
+    section.web .web_box .detail p{
+        margin-top: 5px;
+        font-size: 14px;
+    }
+    section.web .web_box .btn{
+        margin-top: 30px;
+    }
+    section.web .web_box .btn button{
+        margin-right: 10px;
+    }
+    section.web .web_box .btn button a{
+        width: 120px;
+        height: 40px;
+        font-size: 12px;
+        line-height: 40px;
+    }
+    section.web .portfolio2 .btn{
+        width: 200px;
+        height: 40px;
+    }
+    section.web .portfolio2 .btn p{
+        margin-top: 0;
+        font-size: 12px;
+        line-height: 40px;
+    }
+    /* 노랑풍선 애니메이션 */
+    section.web .web_box .banch-marking .yellow_balloon .mock .icon1{
+        width: 40px;
+        position: absolute;
+        top: 50px;
+        left: 150px;
+        animation: cloud2 2s infinite linear;
+    }
+    .web_box .banch-marking .yellow_balloon .mock .icon2{
+        width: 60px;
+        top: 100px;
+        left: 180px;
+    }
+    .web_box .banch-marking .yellow_balloon .mock .icon3{
+        width: 50px;
+        top: 90px;
+        left: 30px;
+    }
+
+    /* 골스튜디오 애니메이션 */
+    section.web .web_box .banch-marking .goalstudio .mock img.icon1{
+        width: 50px;
+    }
+    section.web .web_box .banch-marking .goalstudio .mock img.icon2{
+        width: 40px;
+        left: 40px;
+    }
+    /* 처갓집 애니메이션 */
+    section.web .web_box .banch-marking .cheogajip .mock img{
+        width: 80px;
+    }
+    section.web .web_box .banch-marking .cheogajip .mock img.icon1{
+        top: 100px;
+        left: 30px;
+    }
+    section.web .web_box .banch-marking .cheogajip .mock img.icon2{
+        top: 30px;
+        right: 30px;
+    }
+    /* 포폴1 별 애니메이션 */
+    .mock #star span:nth-child(3){
+        top: 30px;
+        right: 25%;
+        left:initial;
+        animation-delay:1s ;
+        animation-duration: 1.75s;
+    }
+    .mock #star span:nth-child(5){
+        top: 38px;
+        right: 65%;
+        left:initial;
+        animation-delay:0.7s ;
+        animation-duration: 1.5s;
+    }
+    .mock #star span:nth-child(7){
+        top: 20px;
+        right: 50%;
+        left:initial;
+    }
+
+    /* 그래픽 */
+    section.graphic{
+        margin: 30px 0;
+    }
+    section.graphic .center_box{
+        width: 98%;
+        margin: 0 auto;
+    }
+    section.graphic .center_box > h1{
+        font-size: 24px;
+    }
+    section.graphic .center_box > ul{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 300px 300px 300px;
+        gap: 20px;
+        height: 640px;
+    }
+    section.graphic ul li .detail p{
+        font-size: 14px;
+    }
+    section.graphic .more_btn{
+        width: 100%;
+        height: 50px;
+        margin-top: 20px;
+    }
+    section.graphic .more_btn button a{
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+        line-height: 40px;
+    }
+    section.graphic ul li.g7 .view{
+        background-size: 80%;
+    }
+    /* 팝업 사진 사이즈 */
+    .popup ul li{
+        width: 100%;
+    }
+    .popup ul .p2{
+        width: 100%;
+    }
+    .popup ul .p3{
+        width: 39%;
+    }
+    .popup ul .p4{
+        width: 68%;
+    }
+    .popup ul .p5{
+        width: 100%;
+    }
+    .popup ul .p6{
+        width: 100%;
+    }
+    .popup ul .p7{
+        width: 100%;
+    }
+    .popup ul .p8{
+        width: 85%;
+    }
+    
+    /* 메일 */
+    section.contact{
+        margin: 30px 0;
+        height: 600px;
+    }
+    section.contact .center_box{
+        width: 98%;
+    }
+    section.contact .center_box > h1{
+        font-size: 24px;
+    }
+    section.contact .email_ani{
+        display: none;
+    }
+    section.contact .message1{
+        display: none;
+    }
+    section.contact .message2{
+        display: block;
+    }
+    section.contact .message3{
+        display: none;
+    }
+    .email label{
+        width: 90px;
+        font-size: 16px;
+        opacity: 1;
+        float: left;
+        text-align: right;
+        margin-right: 10px;
+        font-family: 'NanumSquareRound';
+    }
+    .email fieldset input{
+        width: 200px;
+        height: 30px;
+        font-family: 'NanumSquareRound';
+    }
+    /* 푸터 */
+    footer p{
+        font-size: 18px;
+    }
+    footer p span{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:380px){
+    .m_header > nav{
+        display: none;
+    }
+    .m_header .menu_btn{
+        display: block;
+    }
+    .m_header .menu_nav{
+        display: block;
+    }
+    #webapp_cover {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        width: 30px;
+        margin: 0 auto;
+        transform: translateY(-50%) scale(2);
+      }
+      
+      #menu_button {
+        width: 30px;
+        overflow: hidden;
+      }
+      
+      #menu_checkbox {
+        display: none;
+      }
+      
+      #menu_label {
+        position: relative;
+        display: block;
+        height: 20px;
+        cursor: pointer;
+      }
+      
+      #menu_label:before,
+      #menu_label:after,
+      #menu_text_bar {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #73989e;
+        border-radius: 3px;
+      }
+      
+      #menu_label:before,
+      #menu_label:after {
+        content: "";
+        transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) left;
+      }
+      
+      #menu_label:before {
+        top: 0;
+      }
+      
+      #menu_label:after {
+        top: 8px;
+      }
+      
+      #menu_text_bar {
+        top: 16px;
+      }
+      
+      #menu_text_bar:before {
+        content: "MENU";
+        position: absolute;
+        top: 5px;
+        right: 0;
+        left: 0;
+        color: #fff;
+        text-shadow: 1px 1px 1px #a8dce4;
+        font-size: 10px;
+        font-weight: bold;
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+      
+      #menu_checkbox:checked + #menu_label:before {
+        left: -39px;
+      }
+      
+      #menu_checkbox:checked + #menu_label:after {
+        left: 39px;
+      }
+      
+      #menu_checkbox:checked + #menu_label #menu_text_bar:before {
+        animation: moveUpThenDown 0.8s ease 0.2s forwards,
+          shakeWhileMovingUp 0.8s ease 0.2s forwards,
+          shakeWhileMovingDown 0.2s ease 0.8s forwards;
+      }
+      
+      @keyframes moveUpThenDown {
+        0% {
+          top: 0;
+        }
+        50% {
+          top: -27px;
+        }
+        100% {
+          top: -14px;
+        }
+      }
+      
+      @keyframes shakeWhileMovingUp {
+        0% {
+          transform: rotateZ(0);
+        }
+        25% {
+          transform: rotateZ(-10deg);
+        }
+        50% {
+          transform: rotateZ(0deg);
+        }
+        75% {
+          transform: rotateZ(10deg);
+        }
+        100% {
+          transform: rotateZ(0);
+        }
+      }
+      
+      @keyframes shakeWhileMovingDown {
+        0% {
+          transform: rotateZ(0);
+        }
+        80% {
+          transform: rotateZ(3deg);
+        }
+        90% {
+          transform: rotateZ(-3deg);
+        }
+        100% {
+          transform: rotateZ(0);
+        }
+      }
+
+      
+    .m_header .menu_nav{
+        width: 100%;
+        height: 40px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #ece9c8;
+    }
+    .menu_nav nav{
+        height: 40px;
+    }
+    .menu_nav ul{
+        padding: 0 20px;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .menu_nav ul li a{
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+    }
+    .menu_nav ul li a img{
+        width: 10px;
+        height: 10px;
+        padding: 5px 5px 5px 0;
+        float: left;
+    }   
+
+    /* 웹 */
+    section.web .web_box{
+        margin-top: 60px;
+        width: 330px;
+        height: 2470px;
+    }
+    section.web .web_box > ul{
+        width: 990px;
+    }
+    section.web .web_box > ul > li{
+        width: 330px;
+    }
+    section.web .web_box > ul > li > ul > li{
+        height: 580px;
+        margin-bottom: 50px;
+    }
+    section.web .web_box > ul > li:nth-child(2) > ul > li{
+        height: 450px;
+    }
+    section.web .web_box > ul > li:nth-child(3) > ul > li{
+        height: 550px;
+    }
+    section.web .web_box .mock{
+        width: 100%;
+        height: 200px;
+    }
+    section.web .web_box .banch-marking .emart .mock{
+        background-image: url(../img/emart-m.jpg);
+        background-size: cover;
+    }
+    section.web .web_box .banch-marking .yellow_balloon .mock{
+        background-image: url(../img/yellow-m.jpg);
+    }
+    section.web .web_box .banch-marking .goalstudio .mock{
+        background-image: url(../img/goal.jpg);
+    }
+    section.web .web_box .banch-marking .cheogajip .mock{
+        background-size: 130%;
+    }
+    section.web .web_box .practice .listen .mock{
+        background-image: url(../img/listen-m.jpg);
+    }
+    section.web .web_box .practice .waterpik .mock{
+        background-image: url(../img/waterpik-m.jpg);
+    }
+    section.web .web_box .practice .tire-tech .mock{
+        background-image: url(../img/tiretech-m.jpg);
+    }
+    section.web .web_box .practice .reactive .mock{
+        background-size: 150%;
+    }
+    section.web .web_box .portfolio .portfolio2 .mock{
+        background-image: url(../img/portfolio2.jpg);
+        background-size: 110%;
+    }
+
+    /* 노랑풍선 애니메이션 */
+    section.web .web_box .banch-marking .yellow_balloon .mock .icon1{
+        width: 30px;
+        position: absolute;
+        top: 5px;
+        left: 130px;
+        animation: cloud2 2s infinite linear;
+    }
+    .web_box .banch-marking .yellow_balloon .mock .icon2{
+        width: 40px;
+        top: 80px;
+        left: 270px;
+    }
+    .web_box .banch-marking .yellow_balloon .mock .icon3{
+        width: 40px;
+        top: 50px;
+        left: 30px;
+    }
+    /* 골스튜디오 애니메이션 */
+    section.web .web_box .banch-marking .goalstudio .mock img.icon1{
+        width: 40px;
+    }
+    section.web .web_box .banch-marking .goalstudio .mock img.icon2{
+        width: 30px;
+        left: 40px;
+    }
+    /* 처갓집 애니메이션 */
+    section.web .web_box .banch-marking .cheogajip .mock img{
+        width: 60px;
+    }
+    section.web .web_box .banch-marking .cheogajip .mock img.icon1{
+        top: 30px;
+        left: 30px;
+    }
+    section.web .web_box .banch-marking .cheogajip .mock img.icon2{
+        top: 30px;
+        right: 30px;
+    }
+    /* 포폴1 별 애니메이션 */
+    .mock #star span:nth-child(2){
+        top: 120px;
+    }
+    .mock #star span:nth-child(3){
+        display: none;
+    }
+    .mock #star span:nth-child(5){
+        display: none;
+    }
+    .mock #star span:nth-child(7){
+        display: none;
+    }
+
+    /* 그래픽 */
+    section.graphic .center_box > ul{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px 200px 200px;
+        gap: 10px;
+        height: 420px;
+    }
+    section.graphic ul li .detail{
+        height: 100px;
+        padding: 7px;
+    }
+    section.graphic ul li .detail h3{
+        font-size: 18px;
+    }
+    section.graphic ul li .detail p{
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    section.graphic ul li .detail button{
+        margin-top: 5px;
+    }
+    section.graphic ul li .detail button a{
+        width: 100px;
+        height: 20px;
+        font-size: 13px;
+        line-height: 20px;
+        border-radius: 5px;
+    }
+
+    /* 이메일 */
+    section.contact{
+        height: 450px;
+    }
+    section.contact .message1{
+        display: none;
+    }
+    section.contact .message2{
+        display: none;
+    }
+    section.contact .message3{
+        display: block;
+    }
+    .email label{
+        width: 70px;
+        font-size: 14px;
+    }
+    .email button{
+        width: 150px;
+        font-size: 14px;
+    }
+
+    footer p{
+        font-size: 14px;
+    }
+    footer p span{
+        font-size: 12px;
+    }
+}
